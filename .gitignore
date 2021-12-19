@@ -6,3 +6,4 @@ __pycache__
 db.sqlite3
 .*__cache__
 .vccode
+local_settings.py

@@ -65,6 +65,6 @@ body {
 }
 
 .btn-black{
-    background-color: #000 !important;
+    background-color: rgba(192, 63, 11, 0.733) !important;
     color: #fff;
 }

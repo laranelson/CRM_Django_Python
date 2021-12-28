@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # crm
 
 Passo para criar novo APP
@@ -18,3 +19,8 @@ Passo para criar novo APP
     # 1 - Digitar no terminal >>> python manage.py makemigrations nomedoapp
     # 2 - Depois digitar o comando >>> python manage.py migrate
     # 3 - Agora é preciso registrar a tabela no arquivo admin.py from .models import nomedoapp
+=======
+Essa aplicação encontra-se hospedada através do Keroku acesse em: https://crrm.herokuapp.com
+Utilize o usuário: admin
+e a senha: admin
+>>>>>>> a911b73fefa12f6b50916d87774dc143c37f3ae8

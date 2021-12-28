@@ -27,6 +27,7 @@ SECRET_KEY = 'django-insecure-3mpg1319ao&brws842ah1rcmjjyj0iff*81qqt#a_*+2p^v2vh
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
+#ALLOWED_HOSTS = []
 ALLOWED_HOSTS = ['crrm.herokuapp.com']
 
 
@@ -41,6 +42,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'crispy_forms',
     'customer',
+    'service',
+    'employee',
+    'attendance',
     'core'
 ]
 
@@ -81,7 +85,7 @@ WSGI_APPLICATION = 'crm.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-# BANCO DE DADOS LOCAL DA APLICAÇÃO, ELE FOI DESATIVADO PARA PODER FAZER O DEPLOY NO HEROKU
+#BANCO DE DADOS LOCAL DA APLICAÇÃO, ELE FOI DESATIVADO PARA PODER FAZER O DEPLOY NO HEROKU
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.sqlite3',

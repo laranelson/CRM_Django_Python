@@ -6,8 +6,20 @@
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href={% url 'customer:customer-list' %}>CLIENTES</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href={% url 'service:service-list' %}>SERVIÇOS</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href={% url 'employee:employee-list' %}>FUNCIONÁRIOS</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href={% url 'attendance:attendance-list' %}>ORDENS DE SERVIÇO</a>
+          </li>
         </ul>
         
+
+
+
         <a href="{% url 'logout' %}">
           <button class="btn btn-danger" type="submit">SAIR</button>
         </a>

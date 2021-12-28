@@ -5,62 +5,61 @@ from django.views.generic import (
                                     UpdateView, 
                                     DeleteView
 )
-from .models import Customer
-from .forms import CustomeForm
+from .models import Employee
+from .forms import EmployeeForm
 from django.urls import reverse
 from django.shortcuts import get_list_or_404
 from django.db.models import Q
 
-class CustomerListView(ListView):
-    template_name = "customer/customer_list.html"
+class EmployeeListView(ListView):
+    template_name = "employee/employee_list.html"
     paginate_by = 5
-    model = Customer
-    #queryset = Customer.objects.all()
+    model = Employee
+    #queryset = Employee.objects.all()
     
     def get_queryset(self):
         name = self.request.GET.get("name")
         if name:
             object_list = self.model.objects.filter(
-                                                    Q(first_name__icontains=name) |
-                                                    Q(last_name__icontains=name)
+                                                    Q(employee_name__icontains=name) |
+                                                    Q(position__icontains=name)
             )
         else:
             object_list = self.model.objects.all()
         return object_list
 
 
-class CustomerCreateView(CreateView):
-    template_name = "customer/customer.html"
-    form_class = CustomeForm
+class EmployeeCreateView(CreateView):
+    template_name = "employee/employee.html"
+    form_class = EmployeeForm
 
     # validar o formulário | validation the form
     def form_valid(self, form):
         return super().form_valid(form)
 
     def get_success_url(self):
-        return reverse("customer:customer-list")
+        return reverse("employee:employee-list")
 
-class CustomerUpdateView(UpdateView):
-    template_name = "customer/customer.html"
-    form_class = CustomeForm
+class EmployeeUpdateView(UpdateView):
+    template_name = "employee/employee.html"
+    form_class = EmployeeForm
     
     def get_object(self):
         id = self.kwargs.get("id")
-        return get_object_or_404(Customer, id=id)
+        return get_object_or_404(Employee, id=id)
 
     # validar o formulário | validation the form
     def form_valid(self, form):
         return super().form_valid(form)
 
     def get_success_url(self):
-        return reverse("customer:customer-list")
+        return reverse("employee:employee-list")
 
-class CustomerDeleteView(DeleteView):
+class EmployeeDeleteView(DeleteView):
     
     def get_object(self):
         id = self.kwargs.get("id")
-        return get_object_or_404(Customer, id=id)
+        return get_object_or_404(Employee, id=id)
 
     def get_success_url(self):
-        return reverse("customer:customer-list")
-   
+        return reverse("employee:employee-list")

@@ -7,5 +7,3 @@ class ServiceAdmin(admin.ModelAdmin):
     list_display = ["id", "service_name", "surname"]
 
     # Nelson Lara
-
-# Register your models here.

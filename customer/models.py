@@ -1,7 +1,6 @@
 from django.db import models
 from django.urls import reverse
 
-# Create your models here.
 
 class Customer(models.Model):
     first_name = models.CharField(max_length=30)
@@ -37,7 +36,3 @@ class Customer(models.Model):
 
     class Meta:
         db_table = "customer"
-# Depois de Criar a class acima é preciso efetuar os passo abaixo 
-# 1 - Digitar no terminal >>> python manage.py makemigrations Customer
-# 2 - Depois digitar o comando >>> python manage.py migrate
-# 3 - Agora é preciso registrar a tabela no arquivo admin.py from .models import Customer
